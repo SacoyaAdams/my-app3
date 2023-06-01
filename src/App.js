@@ -1,3 +1,4 @@
+//sacoya adams
 import { RedStripe } from "./RedStripe";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
