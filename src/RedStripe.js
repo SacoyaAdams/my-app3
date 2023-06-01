@@ -26,7 +26,7 @@ const url = 'https://jsonplaceholder.typicode.com/users/1'
 const usersQuery = useQuery(`users/1`, async() => await axios.get(url), {
 //Below would be considered the third arugment with two properties
 refetchOnWindow: false,
-enabled: false
+enabled: false, 
 
 })
 
