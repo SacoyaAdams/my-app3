@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { RedStripe } from "./RedStripe";
+import { QueryClient, QueryClientProvider } from "react-query";
+import "./App.css";
+import { BlueStripe } from "./BlueStripe";
 
+const myQueryClient = new QueryClient();
+
+//line 12 we are making a call our JSON placeholder API when the component loads the DOM or when our browser window gains focus.
+//This means when a user clicks off the browser and clicks on the browser, React-Query calls the API for us automatically
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Bellow indicated that any components within this
+
+      block will be able to read (share) from the React-Query cache. */}
+        React III
+
+      <QueryClientProvider client={myQueryClient}>
+        <RedStripe />
+
+        <BlueStripe />
+      </QueryClientProvider>
     </div>
   );
 }
